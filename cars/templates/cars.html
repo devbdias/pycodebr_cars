@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PYCODEBR</title>
+</head>
+<body>
+    <h1>Carros</h1>
+    <h3>Listagem de veículos</h3>
+
+    {% block content %}
+        {% for car in cars %}
+
+            <img src="{{ car.photo.url }}" alt="{{ car.brand }} {{ car.model }}">
+            <p>{{ car.brand }} <br>{{ car.model }}  <br>{{ car.value }} <br><br></p>
+            
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
