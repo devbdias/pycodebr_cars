@@ -1,3 +1,5 @@
+# Dockerfile
+
 # Use uma imagem base oficial do Python
 FROM python:3.12-slim
 
@@ -13,6 +15,10 @@ RUN pip install -r requirements.txt
 
 # Copie o código da aplicação para o contêiner
 COPY . /app/
+
+# Crie o diretório de arquivos estáticos e defina permissões
+RUN mkdir -p /app/staticfiles
+RUN chmod -R 755 /app/staticfiles
 
 # Defina as variáveis de ambiente do Django
 ENV DJANGO_SETTINGS_MODULE=myproject.settings
