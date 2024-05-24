@@ -1,5 +1,3 @@
-# Dockerfile
-
 # Use uma imagem base oficial do Python
 FROM python:3.12-slim
 
@@ -28,7 +26,7 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Comando para coletar arquivos estáticos
-RUN python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput || { echo 'collectstatic failed'; exit 1; }
 
 # Comando para aplicar migrações
 RUN python manage.py migrate
