@@ -1,38 +1,31 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Veículos - PYCODEBR
+  Veículos - PYCODEBR
 {% endblock %}
 
 {% block content %}
-<div class="search-container">
-  <form method="GET" action="{% url 'cars_list' %}">
-    <input type="text" name="search" placeholder="Buscar por modelo...">
-    <button type="submit">Buscar</button>
-  </form>
-</div>
+  {% load static %}
 
-{% load static %}
+  <div class="listagem-veiculos">
+    {% if cars %}
+      {% for car in cars %}
+        <div class="carro">
+          {% if car.photo %}
+            <img src="{{ car.photo.url }}" alt="{{ car.brand }} - {{ car.model }}" />
+          {% else %}
+            <img src="{% static 'images/default.jpg' %}" alt="Imagem não disponível" />
+          {% endif %}
 
-<div class="listagem-veiculos">
-  {% if cars %}
-    {% for car in cars %}
-      <div class="carro">
-        {% if car.photo %}
-          <img src="{{ car.photo.url }}" alt="{{ car.brand }} - {{ car.model }}" />
-        {% else %}
-          <img src="{% static 'images/default.jpg' %}" alt="Imagem não disponível" />
-        {% endif %}
-
-        <p>
-          <span class="brand">{{ car.brand }}</span> <br />
-          <span class="model">{{ car.model }} - {{ car.factory_year }}/{{ car.model_year }}</span> <br />
-          <span class="value">{{ car.value }}</span>
-        </p>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p>Nenhum veículo encontrado!</p>
-  {% endif %}
-</div>
+          <p>
+            <span class="brand">{{ car.brand }}</span> <br />
+            <span class="model">{{ car.model }} - {{ car.factory_year }}/{{ car.model_year }}</span> <br />
+            <span class="value">R$ {{ car.value }}</span>
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Nenhum veículo encontrado!</p>
+    {% endif %}
+  </div>
 {% endblock %}

@@ -9,7 +9,15 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'cars_list' %}">Listagem de Veículos</a>
+        <a href="{% url 'cars_list' %}">Veículos</a>
+        <a href="{% url 'new_car' %}">Cadastrar</a>
+        <div class="search-container">
+            <form method="GET" action="{% url 'cars_list' %}">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="Buscar por modelo...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
     </nav>
 
     <div class="content">
