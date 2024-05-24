@@ -11,6 +11,9 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Estilo para o título principal */
@@ -25,6 +28,32 @@ h3 {
     color: #666;
     text-align: center;
     margin-bottom: 30px;
+}
+
+/* Estilo para o formulário de busca */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
 }
 
 /* Container para a listagem de carros */
@@ -42,7 +71,7 @@ h3 {
     margin: 10px;
     padding: 15px;
     width: 300px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -77,4 +106,28 @@ h3 {
     color: #007bff;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+/* Estilo para o menu */
+nav, footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o footer */
+footer {
+    margin-top: auto;
 }
