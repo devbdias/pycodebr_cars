@@ -1,0 +1,315 @@
+/* Reseta margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 60px 20px 60px; /* Adicionado padding para os elementos fixos */
+}
+
+/* Estilo para o título principal */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o subtítulo */
+h3 {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para o menu e o footer */
+nav, footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o formulário de busca no menu */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    width: 200px;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #004494;
+}
+
+.exit {
+    display: flex;
+  }
+  
+  .exit a {
+    display: flex;
+    align-items: right;
+  }
+  
+  .exit img {
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+  }
+
+/* Estilo para a listagem de carros */
+.listagem-veiculos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px; /* Espaço para o menu fixo */
+    margin-bottom: 80px; /* Espaço para o footer fixo */
+}
+
+/* Estilo para cada carro */
+.carro {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para a imagem do carro */
+.carro img {
+    width: 100%;
+    height: 200px; /* Defina a altura desejada */
+    object-fit: cover; /* Isso garante que a imagem se ajuste ao contêiner */
+    border-radius: 5px;
+}
+
+/* Estilo para o parágrafo de informações do carro */
+.carro p {
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Estilo para a marca do carro */
+.carro p .brand {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para o modelo do carro */
+.carro p .model {
+    color: #666;
+}
+
+/* Estilo para o valor do carro */
+.carro p .value {
+    color: #007bff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+/* Estilo para o formulário */
+.car-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título do formulário */
+.car-form .form-title {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+/* Estilo para os campos do formulário */
+.car-form input[type="text"],
+.car-form input[type="number"],
+.car-form input[type="file"],
+.car-form select,
+.car-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Estilo para o botão de envio */
+.car-form .btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.car-form .btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o título do formulário */
+.car-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o formulário */
+.car-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os campos do formulário */
+.car-form input[type="text"],
+.car-form input[type="number"],
+.car-form input[type="file"],
+.car-form select,
+.car-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Estilo para o botão de envio */
+.car-form .btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.car-form .btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o título do formulário */
+.car-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Estilos para o formulário de registro de usuário */
+.register-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form table {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.register-form table tr td {
+    padding: 8px;
+}
+
+.register-form .btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.register-form .btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.register-form p {
+    color: #000;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    justify-content: right;
+}

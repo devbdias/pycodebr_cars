@@ -1,0 +1,38 @@
+{% extends 'base_content.html' %}
+
+{% block title %}
+  Login - PYCODEBR
+{% endblock %}
+
+{% block content %}
+  <form method="post" class="register-form">
+    {% csrf_token %}
+    <div>
+      <table>
+        <tr>
+          <td colspan="2">Usuário:</td>
+          <td colspan="2">{{ login_form.username }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Digite a senha:</td>
+          <td colspan="2">{{ login_form.password }}</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <p>
+        Não é cadastrdo?
+        <a href="{% url 'register' %}">Registre-se</a>
+      </p>
+    </div>
+
+    <div>
+      <p colspan="2">{{ login_form.username.errors }}</p>
+      <p colspan="2">{{ login_form.password.errors }}</p>
+    </div>
+
+    <div>
+      <button type="submit" class="btn-submit">Entrar</button>
+    </div>
+  </form>
+{% endblock %}

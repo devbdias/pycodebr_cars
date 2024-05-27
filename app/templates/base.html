@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}PYCODEBR{% endblock %}</title>
+    <title>
+      {% block title %}
+        PYCODEBR
+      {% endblock %}
+    </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-</head>
-<body>
+  </head>
+  <body>
     <nav>
+      <div>
         <a href="{% url 'cars_list' %}">Veículos</a>
-        <a href="{% url 'new_car' %}">Cadastrar</a>
-        <a href="{% url 'register' %}">Registrar</a>
-        <div class="search-container">
-            <form method="GET" action="{% url 'cars_list' %}">
-                {% csrf_token %}
-                <input type="text" name="search" placeholder="Buscar por modelo...">
-                <button type="submit">Buscar</button>
-            </form>
+        <a href="{% url 'new_car' %}">Cadastrar Veículos</a>
+      </div>
+      <div class="search-container">
+        <form method="GET" action="{% url 'cars_list' %}">
+          {% csrf_token %}
+          <input type="text" name="search" placeholder="Buscar por modelo..." />
+          <button type="submit">Buscar</button>
+        </form>
+        <div class="exit">
+          <a href="{% url 'login' %}"><img src="{% static 'images/exit-svgrepo-com.svg' %}" alt="" /></a>
         </div>
+      </div>
     </nav>
 
     <div class="content">
-        {% block content %}
-        {% endblock %}
+      {% block content %}
+
+      {% endblock %}
     </div>
 
     <footer>
-        <p>&copy; 2024 PYCODEBR. Todos os direitos reservados.</p>
+      <p>&copy; 2024 PYCODEBR. Todos os direitos reservados.</p>
     </footer>
-</body>
+  </body>
 </html>
