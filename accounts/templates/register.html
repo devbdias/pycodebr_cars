@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registrar Usuário - PYCODEBR
+{% endblock %}
+
+{% block content %}
+    <form method="post" class="car-form">
+        {% csrf_token %}
+        <div>
+            <table>
+                <tr>
+                    <td colspan="2">Usuário: </td>
+                    <td colspan="2">{{ user_form.username }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Digite a senha: </td>
+                    <td colspan="2">{{ user_form.password1 }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Confirmação de senha: </td>
+                    <td colspan="2">{{ user_form.password2 }}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <p colspan="2">{{ user_form.username.errors }}</p>
+        <p colspan="2">{{ user_form.password1.errors }}</p>
+        <p colspan="2">{{ user_form.password2.errors }}</p>
+        <button type="submit" class="btn-submit">Salvar</button>
+    </form>
+{% endblock %}
